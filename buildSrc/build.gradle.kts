@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-import org.gradle.kotlin.dsl.plugins.dsl.KotlinDslPlugin
-
-import java.io.File
 import java.util.Properties
 
 plugins {
@@ -44,6 +41,7 @@ subprojects {
         }
 
         dependencies {
+            "api"(platform(project(":buildPlatform")))
             implementation(gradleApi())
         }
 
@@ -87,8 +85,8 @@ allprojects {
             url = uri("https://dl.bintray.com/kotlin/kotlinx")
         }
         maven {
-            name = "kotlin-eap"
-            url = uri("https://dl.bintray.com/kotlin/kotlin-eap")
+            name = "kotlin-dev"
+            url = uri("https://dl.bintray.com/kotlin/kotlin-dev")
         }
     }
 }
